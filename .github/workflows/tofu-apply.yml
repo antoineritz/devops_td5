@@ -28,7 +28,7 @@ jobs:
         working-directory: scripts/tofu/live/lambda-sample
         run: |
           tofu init -no-color -input=false
-          tofu apply -no-color -input=false -lock-timeout=60m -autoapprove
+          tofu apply -no-color -input=false -lock-timeout=60m --auto-approve
       - name: Find current PR
         uses: jwalton/gh-find-current-pr@master
         id: find_pr
