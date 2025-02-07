@@ -30,8 +30,7 @@ github.actor }}
             - uses: peter-evans/create-or-update-comment@v4
                 if: always()
                 env:
-                    RESULT_EMOJI: ${{ steps.plan.outcome == 'success' && '✅'
-|| '' }}
+                    RESULT_EMOJI: ${{ steps.plan.outcome == 'success' && '✅' || '' }}
                 with:
                     issue-number: ${{ github.event.pull_request.number }}
                     body: |

@@ -18,8 +18,7 @@ jobs:
                 uses: aws-actions/configure-aws-credentials@v3
                 with:
                     role-to-assume: arn:aws:iam::034362041445:role/lambda-sample-apply
-                    role-session-name: apply-${{ github.run_number }}-${{
-github.actor }}
+                    role-session-name: apply-${{ github.run_number }}-${{ github.actor }}
                     aws-region: us-east-2
             - name: Setup OpenTofu
                 uses: opentofu/setup-opentofu@v1
@@ -38,8 +37,7 @@ github.actor }}
                 uses: peter-evans/create-or-update-comment@v4
                 if: steps.find_pr.outputs.number
                 env:
-                    RESULT_EMOJI: ${{ steps.apply.outcome == 'success' &&
-'✅' || '' }}
+                    RESULT_EMOJI: ${{ steps.apply.outcome == 'success' && '✅' || '' }}
                 with:
                     issue-number: ${{ steps.find_pr.outputs.number }}
                     body: |
