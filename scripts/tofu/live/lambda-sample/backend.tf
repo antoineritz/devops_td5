@@ -1,11 +1,11 @@
 terraform {
   backend "s3" {
     # TODO: fill in your own bucket name here!
-    bucket         = "fundamentals-of-devops-tofu-state" 
-    key            = "ch5/tofu/live/lambda-sample"       
-    region         = "us-east-2"
-    encrypt        = true
+    bucket         = "bucket-td5-antoineritz" 
+    key            = "scripts/tofu/live/tofu-state"          
+    region         = "us-east-2"                        
+    encrypt        = true                                
     # TODO: fill in your own DynamoDB table name here!
-    dynamodb_table = "fundamentals-of-devops-tofu-state" 
+    dynamodb_table = "bucket-td5-antoineritz" 
   }
 }
