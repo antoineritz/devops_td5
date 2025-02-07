@@ -25,7 +25,7 @@ jobs:
         uses: opentofu/setup-opentofu@v1
       - name: Tofu apply
         id: apply
-        working-directory: td5/scripts/tofu/live/lambda-sample
+        working-directory: scripts/tofu/live/lambda-sample
         run: |
           tofu init -no-color -input=false
           tofu apply -no-color -input=false -lock-timeout=60m -autoapprove
